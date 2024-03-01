@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          counter-reset: hz-lang;
+        }
+        
+        h1 {
+          counter-reset: hz-lang-sub;
+        }
+        
+        h1::before {
+          counter-increment: hz-lang;
+          content: "파트 " counter(hz-lang) ": ";
+        }
+        
+        h2::before {
+          counter-increment: hz-lang-sub;
+          content: counter(hz-lang) "." counter(hz-lang-sub) " ";
+        }
+        ol{
+            list-style-type: none;
+        }
+        #ol1{
+            counter-reset: chapter;
+            list-style-type: none;
+        }
+        li{
+            counter-reset: chapter2;
+        }
+        li::before{
+            counter-increment: chapter;
+            content: counter(chapter) ".";
+        }
+        li li::before{
+            counter-increment: chapter2;
+            content: counter(chapter) "." counter(chapter2);
+        }
+        .asd::after{
+            content: "asd";
+            display: inline-block;
+            clear: both;
+        }
+        </style>
+        
+        
+        
+</head>
+<body>
+    <h1>그누보드 앞단 언어</h1>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>JavaScript</h2>
+        <hr>
+        <h1>그누보드 뒷단 언어</h1>
+        <h2>PHP</h2>
+        <h2>SQL</h2>
+    <ol id="ol1">
+        <li>yos
+            <ol>
+                <li>sad</li>
+                <li>asd</li>
+            </ol>
+        </li>
+        <li>qwe</li>
+        <li>fd</li>
+    </ol>
+    <div class="asd" style="margin: 10px; text-align: center;">
+        <div style="display: inline-block; width: 200px;background-color: red;">
+            <p >asdasdasd</p>
+        </div>
+        <p>asdasd</p>
+        <br>
+        <div style="background-color: black; width: 300px; height: 300px; float: left;"></div>
+        <p>
+            asdasdasdasd
+        </p>
+    </div>
+</body>
+</html>
